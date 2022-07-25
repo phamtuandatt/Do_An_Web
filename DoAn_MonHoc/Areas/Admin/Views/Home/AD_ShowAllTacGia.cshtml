@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "AD_ShowAllTacGia";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@model IEnumerable<DoAn_MonHoc.Models.TACGIA>
+<h2 style="text-align: center;
+    text-transform: uppercase;
+    color: brown;">
+    Quản lý Tác Giả
+</h2>
+
+<p style=" text-transform: uppercase; ">
+    <a href="/Admin/Home/InsertTacGia" style="color: brown;">Thêm tac Gia</a>
+</p>
+<table class="table" id="example" style="width:100%;color: brown;">
+    <thead>
+        <tr>
+            <th>
+                Mã
+            </th>
+            <th>
+                Tác Giả
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="row_@item.MaTG">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaTG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTG)
+                </td>
+                <td>
+                    @Html.ActionLink("Xem", "UpdateTacGia", new { id = item.MaTG }) |
+                    @Ajax.ActionLink("Xóa", "DeleteTacGia", new { id = item.MaTG }, new AjaxOptions
+               {
+                   Confirm = "Bạn có muốn xóa tac gia này không?",
+                   OnComplete = "$('#row_" + @item.MaTG + "').remove()",
+                   HttpMethod = "Delete"
+               })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

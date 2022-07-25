@@ -1,0 +1,66 @@
+﻿
+@model  DoAn_MonHoc.Models.NHANVIEN
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>LoginAdmin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+    <link rel="stylesheet" href="~/fontawesome/css/all.css" type="text/css" />
+    <link href="~/Css/StyleSheet3.css" rel="stylesheet"  />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-4 col-offset-md-4" style="margin-left: 33.33333333%;" >
+                    <div class="panel panel-info" style="margin-top: 25%; border:1px solid #ddd;">
+                        <div class="panel-heading">
+                            <div class="panel-title">Vui Lòng Đăng nhập</div>
+                        </div>
+                        <div style="padding-top:30px" class="panel-body">
+                           @using (Html.BeginForm("LoginAdmin", "Login", FormMethod.Post))
+                           {
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.TenDN, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên đăng nhập" })
+                                @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", @placeholder = "Mật khẩu" })
+                                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Ghi nhớ?
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button style="background-color:#0094ff" type="submit" class="btn btn-success btn-block">Đăng nhập</button>
+                            </div>
+                           }
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- jQuery -->
+    <script src="/Content/Admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Content/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/Content/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/Content/Admin/dist/js/sb-admin-2.js"></script>
+</body>
+</html>
+
+        
+          

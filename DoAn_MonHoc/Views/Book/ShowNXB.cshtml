@@ -1,0 +1,17 @@
+﻿@model IEnumerable<DoAn_MonHoc.Models.NHAXUATBAN>
+
+
+<ul class="list-group list-group-flush text-left">
+    @{
+        foreach (var item in Model)
+        {
+            <li class="list-group-item" style="padding: 10px 0px;">
+                <a href="@Url.Action("SachTheoNXB", "Book", new { @maNXB = @item.MaNXB })" style="text-transform:uppercase;text-decoration:none ;
+   font-family: Roboto,HelveticaNeue,Helvetica Neue,sans-serif ; font-weight:400;line-height:1.7 ">
+                    @item.TenNXB
+                </a>
+            </li>
+        }
+
+    }
+</ul>

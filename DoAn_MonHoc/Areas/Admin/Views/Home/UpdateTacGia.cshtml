@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "UpdateTacGia";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+@model DoAn_MonHoc.Models.TACGIA
+
+<h2 style="text-align: center;
+    text-transform:uppercase;color: brown;">
+    Cập nhật tác giả
+</h2>
+@using (Html.BeginForm("UpdateTacGia", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="color: brown;">
+        <hr />
+        @if (ViewBag.Success != null)
+        {
+            <div id="thongBaoThanhCong" class="alert alert-success">@ViewBag.Success</div>
+        }
+        @Html.HiddenFor(model => model.MaTG)
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenTG, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.TenTG, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.TenTG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.QueQuan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.QueQuan, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.QueQuan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.NgaySinh, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayMat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.NgayMat, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.NgayMat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TieuSu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.TieuSu, new { @class = "form-control", @rows = "7" })
+                @Html.ValidationMessageFor(model => model.TieuSu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cập nhật" class="btn" style="background-color:#007f85;color: white;" />
+            </div>
+        </div>
+    </div>
+}
+<div style="text-transform: uppercase;
+    font-weight: bold;">
+
+    <a href="/Admin/Home/AD_ShowAllTacGia" style=" color:#007f85;font-size:15px">Trở về</a>
+</div>

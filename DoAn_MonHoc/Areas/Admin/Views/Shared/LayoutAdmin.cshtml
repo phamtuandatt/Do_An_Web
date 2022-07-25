@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Trang quản lý sản phẩm">
+    <meta name="author" content="MHN">
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <link href="~/Css/StyleSheet8.css" rel="stylesheet" />
+    <link href="~/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="/Content/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    @*DataTables*@
+    <link href="/Content/Admin/jquery.dataTables.min.css" rel="stylesheet" />
+    @*!DataTables*@
+    <!-- Bootstrap Core CSS -->
+    <link href="/Content/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="/Content/Admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- Timeline CSS -->
+    <link href="/Content/Admin/dist/css/timeline.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/Content/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="/Content/Admin/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/Content/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        #sidebar1 ul li a:hover {
+    text-decoration: none;
+ 
+  
+    background-color: #0099ae;
+
+}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar  navbar-static-top navbar-expand-lg " style="margin-bottom: 0;height:65px;    background-color: #007f85;">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="height:auto" href="#"><img src="/img/logo.png" alt="logo Bookstore" style="height:45px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="float:right">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                @Html.Action("AdminProfile", "Login")
+                <!-- /.dropdown -->
+            </ul>
+            <marquee direction="right" behavior="alternate">
+                <font size="6">
+                    <script type="text/javascript">
+                        farbbibliothek = new Array();
+                        farbbibliothek[0] = new Array("#FF0000", "#FF1100", "#FF2200", "#FF3300", "#FF4400", "#FF5500", "#FF6600", "#FF7700", "#FF8800", "#FF9900", "#FFaa00", "#FFbb00", "#FFcc00", "#FFdd00", "#FFee00", "#FFff00", "#FFee00", "#FFdd00", "#FFcc00", "#FFbb00", "#FFaa00", "#FF9900", "#FF8800", "#FF7700", "#FF6600", "#FF5500", "#FF4400", "#FF3300", "#FF2200", "#FF1100");
+                        farbbibliothek[1] = new Array("#00FF00", "#000000", "#00FF00", "#00FF00");
+                        farbbibliothek[2] = new Array("#00FF00", "#FF0000", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00");
+                        farbbibliothek[3] = new Array("#FF0000", "#FF4000", "#FF8000", "#FFC000", "#FFFF00", "#C0FF00", "#80FF00", "#40FF00", "#00FF00", "#00FF40", "#00FF80", "#00FFC0", "#00FFFF", "#00C0FF", "#0080FF", "#0040FF", "#0000FF", "#4000FF", "#8000FF", "#C000FF", "#FF00FF", "#FF00C0", "#FF0080", "#FF0040");
+                        farbbibliothek[4] = new Array("#FF0000", "#EE0000", "#DD0000", "#CC0000", "#BB0000", "#AA0000", "#990000", "#880000", "#770000", "#660000", "#550000", "#440000", "#330000", "#220000", "#110000", "#000000", "#110000", "#220000", "#330000", "#440000", "#550000", "#660000", "#770000", "#880000", "#990000", "#AA0000", "#BB0000", "#CC0000", "#DD0000", "#EE0000");
+                        farbbibliothek[5] = new Array("#000000", "#000000", "#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF");
+                        farbbibliothek[6] = new Array("#0000FF", "#FFFF00");
+                        farben = farbbibliothek[4];
+                        function farbschrift() {
+                            for (var i = 0 ; i < Buchstabe.length; i++) {
+                                document.all["a" + i].style.color = farben[i];
+                            }
+                            farbverlauf();
+                        }
+                        function string2array(text) {
+                            Buchstabe = new Array();
+                            while (farben.length < text.length) {
+                                farben = farben.concat(farben);
+                            }
+                            k = 0;
+                            while (k <= text.length) {
+                                Buchstabe[k] = text.charAt(k);
+                                k++;
+                            }
+                        }
+                        function divserzeugen() {
+                            for (var i = 0 ; i < Buchstabe.length; i++) {
+                                document.write("<span id='a" + i + "' class='a" + i + "'>" + Buchstabe[i] + "<\/span>");
+                            }
+                            farbschrift();
+                        }
+                        var a = 1;
+                        function farbverlauf() {
+                            for (var i = 0 ; i < farben.length; i++) {
+                                farben[i - 1] = farben[i];
+                            }
+                            farben[farben.length - 1] = farben[-1];
+
+                            setTimeout("farbschrift()", 30);
+                        }
+                        //
+                        var farbsatz = 1;
+                        function farbtauscher() {
+                            farben = farbbibliothek[farbsatz];
+                            while (farben.length < text.length) {
+                                farben = farben.concat(farben);
+                            }
+                            farbsatz = Math.floor(Math.random() * (farbbibliothek.length - 0.0001));
+                        }
+                        setInterval("farbtauscher()", 5000);
+
+                        text = "Ban Quản Trị BookStore"; //h
+                        string2array(text);
+                        divserzeugen();
+                        //document.write(text);
+                    </script>
+                </font>
+            </marquee>
+            <div class="navbar-default sidebar " role="navigation">
+                <div class="wrapper sticky-top">
+                    <div id="sidebar1" style="top:60px;background-color: #007f85;">
+                        <ul class="list-unstyled components" style="padding-top:0px">
+                            <li>
+                                <a href="#homeSubmenu" data-toggle="collapse" style="color: white;" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-bars" style="color: white;"></i> Sản phẩm </a>
+                                <ul style="list-style: none; padding-left: 10px;">
+                                    <li> <a href="/Admin/Home/AD_ShowAllBook" style="color: white;"><i class="fas fa-book" style="padding-right: 5px;"></i>Sách</a> </li>
+                                    <li> <a href="/Admin/Home/AD_ShowAllLoaiSach" style="color: white;"><i class="fab fa-typo3" style="padding-right: 5px;"></i>Thể Loại</a> </li>
+                                    <li> <a href="/Admin/Home/AD_ShowAllTacGia" style="color: white;"> <i class="fas fa-user-tie" style="padding-right: 5px;"></i>Tác Giả</a> </li>
+                                    <li> <a href="/Admin/Home/AD_ShowAllNhaXuatBan" style="color: white;"><i class="fas fa-user-edit" style="padding-right: 5px;"></i>Nhà Xuất Bản</a> </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#pageSubmenu" data-toggle="collapse" style="color: white;" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cogs" style="color: white;"></i> Hệ thống</a>
+                                <ul style="list-style: none; padding-left: 10px;">
+                                    <li> <a href="/Admin/Home/AD_ShowAllKH" style="color: white;"> <i class="fas fa-user-circle" style="padding-right: 5px;"></i>Tài Khoản</a> </li>
+                                    <li> <a href="/Admin/Home/AD_ShowNhaCungCap" style="color: white;"> <i class="fas fa-house-user"  style="padding-right: 5px;"></i>Nhà Cung Cấp</a> </li>
+                                    <li> <a href="/Admin/Home/AD_ShowAllPhieuNhapHang" style="color: white;"><i class="fas fa-igloo" style="padding-right: 5px;"></i>Phiếu Nhập Hàng</a> </li>
+                                    <li> <a href="/Admin/Home/AD_ShowAllPhieuDatHang" style="color: white;"><i class="fas fa-shopping-cart" style="padding-right: 5px;"></i>Đơn Hàng</a> </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Admin/Home/FeedBack_KH" style="color: white;"><i class="fa fa-file" style="color: white;"></i> Liên Hệ</a>
+
+                            </li>
+                        </ul>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content -->
+        <div id="page-wrapper" style="min-height: 671px;padding: 0 0px ;background-color: #F0F0F0;">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+  
+    @*!DataTables*@
+    <script src="/Content/Admin/js/jquery.unobtrusive-ajax.min.js"></script>
+    @*DataTables*@
+    <script src="/Content/Admin/js/jquery.dataTables.min.js"></script>
+    @*!DataTables*@
+    <script src="/Content/Admin/js/jquery.unobtrusive-ajax.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Content/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/Content/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/Content/Admin/dist/js/sb-admin-2.js"></script>
+    <!--Thư viên javascripst su dung datatables Nó cung cấp tìm kiếm, sắp xếp và phân trang mà không cần bất kỳ cấu hình nào-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable();
+            $('#thongBaoThanhCong').delay(3000).slideUp();
+        });
+    </script>
+</body>
+</html>

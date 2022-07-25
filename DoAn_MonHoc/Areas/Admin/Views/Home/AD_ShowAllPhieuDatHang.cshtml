@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "AD_ShowAllPhieuDatHang";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@model IEnumerable<DoAn_MonHoc.Models.PHIEUDATHANG>
+
+<h2 style="text-align: center;
+    text-transform: uppercase;
+    color: brown;">
+    quản lý đơn hàng
+</h2>
+<table class="table" id="example" style="width:100%;color: brown;">
+    <thead>
+        <tr>
+            <th>
+                MaDDH
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KHACHHANG.TenKH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayDat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TinhTrang)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="row_@item.MaPhieuDH">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaPhieuDH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KHACHHANG.TenKH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                </td>
+                <td>
+                    <a href="#" class="btn-active" data-id="@item.MaKH">@Html.Raw(item.TinhTrang ? "<strong>Xác Nhận Thành Công</strong>" : "Chưa Xác Nhận")</a>
+                </td>
+
+                <td>
+                    @Html.ActionLink("Xem", "DetailsCT_PDDH", new { id = item.MaPhieuDH })
+                </td>
+            </tr>}
+    </tbody>
+
+</table>

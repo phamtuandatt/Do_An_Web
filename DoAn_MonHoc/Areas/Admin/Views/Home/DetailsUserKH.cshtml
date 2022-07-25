@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "DetailsUserKH";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@model DoAn_MonHoc.Models.KHACHHANG
+
+<div>
+    <hr />
+    <table class="table table-bordered" style="color: black;">
+        <tr>
+            <td colspan="2" style="text-transform: uppercase;font-weight:bold; color: brown; text-align: center;font-size: 25px;">
+                THÔNG TIN CHI TIẾT NGƯỜI DÙNG
+            </td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Tên</td>
+            <td>@Html.DisplayFor(model => model.TenKH)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Địa Chỉ</td>
+            <td>@Html.DisplayFor(model => model.DiaChi)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Email</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Điện Thoại</td>
+            <td>@Html.DisplayFor(model => model.SDT)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;" >Ngày sinh</td>
+            <td>@Html.DisplayFor(model => model.NgaySinh)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Giới Tinh</td>
+            <td>@Html.DisplayFor(model => model.GioiTinh)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Tên DN</td>
+            <td>@Html.DisplayFor(model => model.TenDN)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Mật Khẩu</td>
+            <td>@Html.DisplayFor(model => model.MatKhau)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Ngày Tạo</td>
+            <td>@Html.DisplayFor(model => model.NgayTao)</td>
+        </tr>
+    </table>
+    </div>
+    <div style="text-transform: uppercase;
+    font-weight: bold;">
+        <a href="/Admin/Home/AD_ShowAllKH" style=" color:#007f85;font-size:15px">Trở về</a>
+    </div>

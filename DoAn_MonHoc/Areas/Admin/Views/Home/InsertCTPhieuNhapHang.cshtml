@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "InsertCTPhieuNhapHang";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center;
+    text-transform:uppercase;color: brown;">
+    Thêm Chi Tiết Phiếu Nhập Hàng
+</h2>
+@model DoAn_MonHoc.Models.CT_PHIEUNHAPHANG
+@using (Html.BeginForm("InsertCTPhieuNhapHang", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="color: brown;">
+        <hr />
+        @if (ViewBag.Success != null)
+        {
+            <div id="thongBaoThanhCong" class="alert alert-success">@ViewBag.Success</div>
+        }
+        <div class="form-group">
+            <label class="control-label col-md-2">Loại</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaPhieuNhapHang", null, "Chọn Phiếu Nhập Hàng", new { @class = "form-control", style = "height: 35px" })
+                @Html.ValidationMessageFor(model => model.MaPhieuNhapHang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaSach, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MaSach", null, "Chọn Mã Sách", new { @class = "form-control", style = "height: 35px" })
+                @Html.ValidationMessageFor(model => model.MaSach, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sluong, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Sluong, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.Sluong, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DonGiaNhap, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DonGiaNhap, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.DonGiaNhap, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TongTien, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.TongTien, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.TongTien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm" class="btn" style="background-color:#007f85;color: white;" />
+            </div>
+        </div>
+    </div>
+}
+<div style="text-transform: uppercase;
+    font-weight: bold;">
+    <a href="/Admin/Home/AD_ShowAllPhieuNhapHang" style="color:#007f85;font-size:15px">Trở về</a>
+</div>
+

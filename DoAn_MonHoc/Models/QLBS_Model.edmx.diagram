@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df0d327194e84c62a47c2428d5ebd3a2" Name="Diagram1">
+        <EntityTypeShape EntityType="NHASACHModel.CT_PHIEUDATHANG" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.CT_PHIEUNHAPHANG" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.LIENHE" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.LOAISACH" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.NHAXUATBAN" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.PHIEUDATHANG" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.PHIEUNHAPHANG" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.sysdiagram" Width="1.5" PointX="2.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.TACGIA" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHASACHModel.THONGTINSACH" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="NHASACHModel.FK_CT_PHIEUDH_PDT" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_CT_PHIEUDH_TTS" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_CT_PHIEUNHAPHANG_PNH" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_CT_PHIEUNHAPHANG_TTS" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_PHIEUDATHANG_KH" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_THONGTINSACH_LOAISACH" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_PHIEUNHAPHANGg_NHACUNGCAP" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_PHIEUNHAPHANG_NHANVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_THONGTINSACH_NHAXUATBAN" ManuallyRouted="false" />
+        <AssociationConnector Association="NHASACHModel.FK_THONGTINSACH_TACGIA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

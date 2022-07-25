@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "DetailsCT_PDDH";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@model IEnumerable<DoAn_MonHoc.Models.CT_PHIEUDATHANG>
+
+<h2 style="text-align: center;
+    text-transform: uppercase;
+    color: brown; padding-top:15px">
+    Chi tiết đơn hàng
+</h2>
+<table class="table" >
+    <tr style="color:brown">
+        <th>
+            @Html.DisplayNameFor(model => model.PHIEUDATHANG.MaPhieuDH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THONGTINSACH.TenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHIEUDATHANG.MaPhieuDH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.THONGTINSACH.TenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                <p>@String.Format("{0:0,0}", item.DonGia) VND</p>
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    <a href="/Admin/Home/AD_ShowAllPhieuDatHang" style=" color:#007f85;font-size:15px;text-transform:uppercase">Trở về</a>
+</div>
+

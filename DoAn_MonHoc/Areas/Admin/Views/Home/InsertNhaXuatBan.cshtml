@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "InsertNhaXuatBan";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+@model  DoAn_MonHoc.Models.NHAXUATBAN
+
+<h2 style="text-align: center;
+    text-transform:uppercase;color: brown;">
+    Thêm nhà xuất bản
+</h2>
+@using (Html.BeginForm("InsertNhaXuatBan", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="color: brown;">
+        <hr />
+        @if (ViewBag.Success != null)
+        {
+            <div id="thongBaoThanhCong" class="alert alert-success">@ViewBag.Success</div>
+        }
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenNXB, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.TenNXB, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.TenNXB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaChi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DiaChi, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DienThoai, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DienThoai, new { @class = "form-control", placeHolder = "" })
+                @Html.ValidationMessageFor(model => model.DienThoai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm" class="btn" style="background-color:#007f85;color: white;" />
+            </div>
+        </div>
+    </div>
+}
+<div style="text-transform: uppercase;
+    font-weight: bold;">
+    <a href="/Admin/Home/AD_ShowAllNhaXuatBan" style="color:#007f85;font-size:15px">Trở về</a>
+</div>
+
+
+

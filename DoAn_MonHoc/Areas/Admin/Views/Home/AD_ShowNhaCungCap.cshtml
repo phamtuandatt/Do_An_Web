@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "AD_ShowNhaCungCap";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@model IEnumerable<DoAn_MonHoc.Models.NHACUNGCAP>
+
+<h2 style="text-align: center;
+    text-transform: uppercase;
+    color: brown;">
+    Quản lý Nhà Cung Cấp
+</h2>
+
+<p style=" text-transform: uppercase; ">
+    <a href="/Admin/Home/InsertNCC" style="color: brown;">Thêm Nhà Cung Cấp</a>
+</p>
+<table class="table" id="example" style="width:100%;color: brown;">
+    <thead>
+        <tr>
+            <th>
+                Mã NCC
+            </th>
+            <th>
+                Ten NCC
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="row_@item.MaNCC.Trim()">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNCC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNCC)
+                </td>
+                <td>
+                    @Html.ActionLink("Xem", "UpdateNCC", new { id = item.MaNCC.Trim() })|
+                    @Ajax.ActionLink("Xóa", "DeleteNhaCungCap", new { id = item.MaNCC.Trim() }, new AjaxOptions
+               {
+                   Confirm = "Bạn có muốn xóa nhà cung cấp này không?",
+                   OnComplete = "$('#row_" + @item.MaNCC.TrimEnd() + "').remove()",
+                   HttpMethod = "Delete"
+               })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

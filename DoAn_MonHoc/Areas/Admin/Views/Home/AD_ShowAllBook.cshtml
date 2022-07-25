@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DoAn_MonHoc.Models.THONGTINSACH>
+@{
+    ViewBag.Title = "AD_ShowAllBook";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+<h2 style="text-align: center;
+    text-transform: uppercase;
+    color: brown;">Quản lý sách</h2>
+<p style=" text-transform: uppercase; ">
+    <a href="/Admin/Home/InsertBook" style="color: brown;">Thêm sách</a>
+</p>
+<table id="example" class="table table-striped table-bordered" style="width:100%;color: brown;">
+    <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Tên Sách</th>
+            <th>Ảnh Bìa</th>
+            <th>Giá Sách</th>
+            <th>Số Lượng Tồn</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="row_@item.MaSach">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaSach)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSach)
+                </td>
+                <td>
+                    <img src="/HinhAnhSach/@item.HinhAnh" width="105" height="140" />
+                </td>
+                <td>
+                    <span>@(item.GiaSach.HasValue ? item.GiaSach.Value.ToString("N0") : "Liên hệ") VND</span>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SLTon)
+                </td>
+                <td>
+                    @Html.ActionLink("Xem", "DetailsBook", new { id = item.MaSach }) |
+                    @Ajax.ActionLink("Xóa", "DeleteBook", new { id = item.MaSach }, new AjaxOptions
+               {
+                   Confirm = "Bạn có muốn xóa cuốn sách này không?",
+                   OnComplete = "$('#row_" + @item.MaSach + "').remove()",
+                   HttpMethod = "Delete"
+               })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

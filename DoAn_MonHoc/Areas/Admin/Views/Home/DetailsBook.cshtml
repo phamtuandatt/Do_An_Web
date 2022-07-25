@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "DetailsBook";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+@model DoAn_MonHoc.Models.THONGTINSACH
+
+<div>
+    <hr />
+    <table class="table table-bordered" style="color: black;">
+        <tr>
+            <td colspan="2" style="text-transform: uppercase; font-weight:bold;color: brown; text-align: center;font-size: 25px;">
+                @Model.TenSach
+            </td>
+        </tr>
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown">@Html.DisplayNameFor(model => model.TenSach)</td>
+            <td >@Html.DisplayFor(model => model.TenSach)</td>
+        </tr>
+      
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown">NXB</td>
+            <td colspan="2">@Html.DisplayFor(model => model.NHAXUATBAN.TenNXB)</td>
+        </tr>
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown">Tác giả</td>
+            <td colspan="2">@Html.DisplayFor(model => model.TACGIA.TenTG)</td>
+        </tr>
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown"> Thể loại</td>
+            <td colspan="2"> @Html.DisplayFor(model => model.LOAISACH.TenLoai)</td>
+        </tr>
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown">@Html.DisplayNameFor(model => model.GiaSach)</td>
+            <td colspan="2"><p><span>@(Model.GiaSach.HasValue ? Model.GiaSach.Value.ToString("N0") : "Liên hệ")</span> VND</p></td>
+        </tr> 
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown">@Html.DisplayNameFor(model => model.GiamGia)</td>
+            <td colspan="2"><p><span>@(Model.GiaSach.HasValue ? Model.GiamGia.Value.ToString("N0") : "Liên hệ")</span> VND</p></td>
+        </tr>
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown"> Sơ lược</td>
+            <td> @Html.DisplayFor(model => model.MoTa)</td>
+        </tr>
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown"> @Html.DisplayNameFor(model => model.HinhAnh)</td>
+            <td colspan="2"> <img src="/HinhAnhSach/@Model.HinhAnh" width="180" height="250" /></td>
+        </tr>
+        <tr style="font-size:15px">
+            <td style="width: 119px;color: brown">  Số lượng</td>
+            <td colspan="2"> @Html.DisplayFor(model => model.SLTon)</td>
+        </tr>
+        <tr style="font-size:15px">
+         
+            <td  colspan="2" style="text-align: center; text-transform:uppercase">@Html.ActionLink("Trở về", "AD_ShowAllBook") |
+            @Html.ActionLink("Sửa", "UpdateBook", new { id = Model.MaSach })</td>
+        </tr>
+    </table>
+</div>
+

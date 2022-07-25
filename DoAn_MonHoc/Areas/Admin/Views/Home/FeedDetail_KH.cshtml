@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "FeedDetail_KH";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+@model DoAn_MonHoc.Models.LIENHE
+           <div>
+<hr />
+<table class="table table-bordered" style="color: black;">
+    <tr>
+        <td colspan="2" style="text-transform: uppercase;font-weight:bold; color: brown; text-align: center;font-size: 25px;">
+            CHI TIẾT PHẢN HỒI
+        </td>
+    </tr>
+    <tr style="font-size:15px">
+
+        <td style="width: 30%;text-align: center; color: brown"> Họ</td>
+        <td>@Html.DisplayFor(model => model.Ho)</td>
+    </tr>
+    <tr style="font-size:15px">
+
+        <td style="width: 30%;text-align: center;color: brown">Tên</td>
+        <td>@Html.DisplayFor(model => model.Ten)</td>
+    </tr>
+    <tr style="font-size:15px">
+
+        <td style="width: 30%;text-align: center;color: brown">Email</td>
+        <td>@Html.DisplayFor(model => model.Email)</td>
+    </tr>
+    <tr style="font-size:15px">
+
+        <td style="width: 30%;text-align: center;color: brown">Điện Thoại</td>
+        <td>@Html.DisplayFor(model => model.DienThoai)</td>
+    </tr>
+    <tr style="font-size:15px">
+
+        <td style="width: 30%;text-align: center;color: brown">Nội Dung</td>
+        <td>@Html.DisplayFor(model => model.NoiDung)</td>
+    </tr>
+    <tr style="font-size:15px">
+
+        <td style="width: 30%;text-align: center;color: brown">Ngày Cập Nhật</td>
+        <td>@Html.DisplayFor(model => model.NgayCapNhat)</td>
+    </tr>
+   
+</table>
+    </div>
+<div style="text-transform: uppercase;
+    font-weight: bold;">
+    <a href="/Admin/Home/FeedBack_KH" style=" color:#007f85;font-size:15px">Trở về</a>
+</div>

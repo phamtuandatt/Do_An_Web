@@ -1,0 +1,339 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!--Bootstrap 4-->
+
+    <link href="/Content/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+    <link rel="stylesheet" href="~/fontawesome/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="~/Css/StyleSheet1.css" type="text/css" />
+    @*<link href="/Content/Client/css/font-awesome.min.css" rel="stylesheet" />*@
+    <link href="~/Css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+  
+   
+</head>
+<body>
+    <div class="page">
+        @*phần đầu*@
+        <div class="content">
+            <header id="header" class="">
+                <div class="header-top" style="background-color: #007f85;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <nav class="header-top-nav">
+                                    @*Menu right*@
+                                   @Html.Action("Login", "User")
+
+                                    @*ket thuc Menu right*@
+                                    @*<ul class="nav justify-content-end">
+
+                                        @*<li class="nav-item">
+                                            <a class="nav-link" href="#" style="padding: 7px 12px;text-transform: uppercase"><i class="fa fa fa-lock"></i>Đăng nhập</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" style="padding: 7px 12px;text-transform: uppercase"><i class="fas fa-sign-in-alt"></i>Đăng ký</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" style="padding: 7px 12px;text-transform: uppercase"><i class="fa fa-check-square"></i>Thanh toán</a>
+                                        </li>
+                                    </ul>*@
+
+                                </nav>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="header-bottom" style="padding-top: 36px; padding-bottom: 36px; background-color: #0099ae; }">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-5 header-logo">
+
+                                <a href="/" class="logo-wrapper ">
+                                    <img src="~/img/logo.png" alt="logo Bookstore" style="height:45px" />
+                                </a>
+                            </div>
+                            <div class="col-md-6 d-sm-none d-md-block d-none d-sm-block header-services ">
+                                <ul class="row">
+                                    <li class="col-md-4 col-sm-4">
+                                        <a href="#" class="title" style="color: #fff; text-transform: uppercase; }"><i class="fa fa-cube"></i>COD toàn quốc</a>
+                                    </li>
+                                    <li class="col-md-4 col-sm-4">
+                                        <a href="#" class="title" style="color: #fff; text-transform: uppercase; }"><i class="fas fa-exchange-alt"></i>Đổi trả 24h</a>
+                                    </li>
+                                    <li class="col-md-4 col-sm-4">
+                                        <a href="#" class="title" style="color: #fff; text-transform: uppercase; }"><i class="fa fa-life-ring"></i>Hỗ trợ 24/7</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-8 header-cart">
+                                <div class="header-right" style="float:right">
+                                    <div class="header-right">
+                                        <div class="top-cart-contain f-right">
+                                            <div class="mini-cart text-xs-center">
+                                                <div class="heading-cart cart_header">
+                                                    @Html.Action("CartIcon", "Cart")
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-nav-search" style="background-color:#00b7d0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 hidden-sm hidden-xs">
+                                <nav class="navbar navbar-expand-lg">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="">
+                                        <span class="navbar-toggler-icon">
+                                            <i class="fas fa-bars" style="color:white ;font-size:28px"></i>
+                                        </span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarNav">
+                                        <ul class="nav navbar-nav">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="~/Home/TrangChu" style="color: #fff; text-transform: uppercase; padding-right: 15px;padding-left:15px">Trang Chủ<span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="~/Home/About" style="color: #fff; text-transform: uppercase; padding-right: 15px;padding-left:15px">Giới Thiệu</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="~/Home/SanPham" style="color: #fff; text-transform: uppercase; padding-right: 15px;padding-left:15px">Sản Phẩm</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="~/Home/Contact" style="color: #fff; text-transform: uppercase; padding-right: 15px;padding-left:15px">Liên Hệ</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+
+
+                            </div>
+
+
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="header-search" style=" position: relative; margin: 10px 0;}">
+                                    @using (Html.BeginForm("SearchResult", "Book", FormMethod.Post, new { @class = "navbar-form", @role = "search" }))
+                                    {
+                                        
+                                            @*<input style="width: 370px;" type="text" class="form-control" placeholder="Tìm kiếm sách..." name="search">*@
+                                            @*@Html.TextBox("txtSearch", "", htmlAttributes: new { @class = "form-control", @placeholder = "Tìm kiếm sách...", @style = "width: 370px;background: #FAFAFA;border-radius: 40px;" })*@
+                                    <input type="text"  name="txtSearch" class="hs-text" placeholder="Tìm kiếm sách..." value="" style=" width: 100%; padding: 0 10px; line-height: 26px; border: none; outline: none;">
+                                    <button type="submit" class="hs-submit" style="position: absolute; top: 4px;right: 3px;color: #6b6b6b;background-color: transparent;border: none;"><i class="fa fa-search"></i></button>
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        @*phần thân*@
+        <div class="container">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+
+        @* phần cuôi*@
+
+        <footer id="footer">
+            <div class="site-footer" style="width: 100%; float:left; padding: 30px 0; background: #f5f5f5;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="brand-logos owl-carousel owl-theme owl-loaded owl-drag" data-lg-items="6" data-md-items="4" data-sm-items="3" data-xs-items="2" data-xxs-items="1" data-loop="true" data-nav="true" data-auto-play="true" data-margin="10">
+                                <div class="owl-stage-outer">
+                                    <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0.25s ease 0s; width: 1181px;">
+                                        <div class="owl-item active" style="width: 186.667px; margin-right: 10px;float: left;">
+                                            <div class="item"  style="display: flex; justify-content:center; justify-items:center;">
+                                                <img  style="width: auto;}" src="//bizweb.dktcdn.net/100/047/782/themes/833677/assets/brand_image_1.png?1630459265498" alt="Bookstore">
+                                            </div>
+                                        </div>
+                                        <div class="owl-item active" style="width: 186.667px; margin-right: 10px;float: left;">
+                                                  <div class="item" style="display: flex; justify-content:center; justify-items:center;">
+                                                      <img src="//bizweb.dktcdn.net/100/047/782/themes/833677/assets/brand_image_2.png?1630459265498" alt="Bookstore">
+                                                  </div>
+                                        </div>
+                                        <div class="owl-item active" style="width: 186.667px; margin-right: 10px;float: left;">
+                                            <div class="item" style="display: flex; justify-content:center; justify-items:center;">
+                                                <img src="//bizweb.dktcdn.net/100/047/782/themes/833677/assets/brand_image_3.png?1630459265498" alt="Bookstore">
+                                            </div>
+                                        </div>
+                                        <div class="owl-item active" style="width: 186.667px; margin-right: 10px;float: left;">
+                                            <div class="item" style="display: flex; justify-content:center; justify-items:center;">
+                                                <img src="//bizweb.dktcdn.net/100/047/782/themes/833677/assets/brand_image_4.png?1630459265498" alt="Bookstore">
+                                            </div>
+                                        </div>
+                                        <div class="owl-item active" style="width: 186.667px; margin-right: 10px;float: left;">
+                                            <div class="item" style="display: flex; justify-content:center; justify-items:center;">
+                                                <img src="//bizweb.dktcdn.net/100/047/782/themes/833677/assets/brand_image_5.png?1630459265498" alt="Bookstore">
+                                            </div>
+                                        </div>
+                                        <div class="owl-item active" style="width: 186.667px; margin-right: 10px;float: left;">
+                                            <div class="item" style="display: flex; justify-content:center; justify-items:center;">
+                                                <img src="//bizweb.dktcdn.net/100/047/782/themes/833677/assets/brand_image_3.png?1630459265498" alt="Bookstore">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-menu footer-widget">
+                                <h4 class="cliked">Thông tin</h4>
+                                <ul class="list-menu toggle-mn" style="">
+
+                                    <li><a href="#" title="">TẤT CẢ</a></li>
+
+                                    <li><a href="#" title="">Sách Book</a></li>
+
+                                    <li><a href="#" title="">Sách Hướng Dẫn</a></li>
+
+                                    <li><a href="#" title="">Sách Ngoại Văn</a></li>
+
+                                    <li><a href="#" title="">Họa cụ</a></li>
+
+                                    <li><a href="#" title="">TIN TỨC</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-menu footer-widget">
+                                <h4 class="cliked">Chính sách</h4>
+                                <ul class="list-menu toggle-mn" style="">
+
+                                    <li><a href="#" title="">Chính sách bảo mật thanh toán</a></li>
+
+                                    <li><a href="~/Home/VanChuyen" title="">Chính sách vận chuyển</a></li>
+
+                                    <li><a href="~/Home/DoiTra" title="">Chính sách Doi tra</a></li>
+
+                                    <li><a href="~/Home/QuyDinh" title="">Quy định sử dụng</a></li>
+
+                                    <li><a href="#" title="">Chính sách Đặt hàng</a></li>
+
+                                    <li><a href="~/Home/ThanhToan" title="">Hướng dẫn Thanh Toán</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-menu footer-widget">
+                                <h4 class="cliked">Hỗ trợ</h4>
+                                <ul class="list-menu toggle-mn" style="">
+
+                                    <li><a href="/search" title="">Tìm kiếm</a></li>
+
+                                    <li><a href="/User/PageDangNhap" title="">Đăng nhập</a></li>
+
+                                    <li><a href="/User/DangKy" title="">Đăng ký</a></li>
+
+                                    <li><a href="/Cart/Index" title="">Giỏ hàng</a></li>
+
+                                    <li><a href="/huong-dan" title="">Hướng dẫn</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-menu footer-contact">
+                                <h4>Liên hệ</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fa fa-home"></i><p>
+                                            Bookstore Shop Online
+                                        </p>
+                                    </li>
+                                    <li><i class="fa fa-envelope"></i><p><a href="#">buithiaily@gmail.com</a></p></li>
+                                    <li><i class="fa fa-phone"></i><p><a href="tel:03 6386 1486">03 6386 1486</a></p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="footer-bottom">
+                <div class="container">
+                    <div class="row row_footer">
+                        <div id="copy1" class="col-md-6 col-sm-12 col-xs-12">
+                            <p>
+                                <span class="frist-copy">Copyright ©2021 BookStore</span> <span class="hidden-xs">|</span> <span class="last-copy">All Rights Reserved <a href="#" target="_blank" rel="nofollow" title=""></a></span>
+                            </p>
+                        </div>
+                        <div id="payment_2" class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="footer-payments">
+                                <ul>
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src="//bizweb.dktcdn.net/thumb/small/100/355/442/themes/720995/assets/payment-1.png?1633682650324" alt="thanh-toan">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src="//bizweb.dktcdn.net/thumb/small/100/355/442/themes/720995/assets/payment-2.png?1633682650324" alt="thanh-toan">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src="//bizweb.dktcdn.net/thumb/small/100/355/442/themes/720995/assets/payment-3.png?1633682650324" alt="thanh-toan">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src="//bizweb.dktcdn.net/thumb/small/100/355/442/themes/720995/assets/payment-4.png?1633682650324" alt="thanh-toan">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src="//bizweb.dktcdn.net/thumb/small/100/355/442/themes/720995/assets/payment-5.png?1633682650324" alt="thanh-toan">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </footer>
+
+
+    </div>
+    <script type="text/javascript">
+    $("a").click(function () {
+        $("a").css("background-color", "");
+        $(this).css("background-color", "#007f85");
+    });
+    </script>
+
+    @RenderSection("jsFooter", required: false)
+ 
+</body>
+
+</html>

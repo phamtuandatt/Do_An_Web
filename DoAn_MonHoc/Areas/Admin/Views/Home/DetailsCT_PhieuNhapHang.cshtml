@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "DetailsCT_PhieuNhapHang";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@model IEnumerable<DoAn_MonHoc.Models.CT_PHIEUNHAPHANG>
+
+<h2 style="text-align: center;
+    text-transform: uppercase;
+    color: brown;">
+    Chi tiết đơn nhập hàng
+</h2>
+<p style=" text-transform: uppercase; ">
+    <a href="/Admin/Home/InsertCTPhieuNhapHang" style="color: brown;">Thêm phiếu chi tiết phiếu nhập hàng</a>
+</p>
+<table class="table">
+    <tr style="color:brown">
+        <th>
+            Mã Sách
+        </th>
+        <th>
+            Mã Phiếu Nhập Hàng
+        </th>
+        <th>
+            Số Lượng
+        </th>
+        <th>
+            Đơn Giá Nhập
+        </th>
+        <th>
+            Tổng Tiền
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHIEUNHAPHANG.MaPhieuNhapHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sluong)
+            </td>
+            <td>
+                <p>@String.Format("{0:0,0}", item.DonGiaNhap) VND</p>
+            </td>
+            <td>
+                <p>@String.Format("{0:0,0}", item.TongTien) VND</p>
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    <a href="/Admin/Home/AD_ShowAllPhieuNhapHang" style=" color:#007f85;font-size:15px;text-transform:uppercase">Trở về</a>
+</div>

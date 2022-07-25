@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "AdminInfo";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+<style>
+    img {
+        max-width: 100%;
+    }
+</style>
+@model DoAn_MonHoc.Models.NHANVIEN
+<div>
+    <hr />
+    <table class="table table-bordered" style="color: black;">
+        <tr>
+            <td colspan="3" style="text-transform: uppercase;font-weight:bold; color: brown; text-align: center;font-size: 25px;">
+                Hồ sơ nhân viên
+            </td>
+        </tr>
+        <tr >
+            <td rowspan="7" style="width:300px"><img src="~/img/@Html.DisplayFor(model => model.HinhAnh)" id=" img_01" width="270px" height="300px"></td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Tên Nhân Viên</td>
+            <td>@Html.DisplayFor(model => model.TenNV)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Ngày Sinh</td>
+            <td>@Html.DisplayFor(model => model.NgaySinh)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Email</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">SDT</td>
+            <td>@Html.DisplayFor(model => model.SoDT)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Tên DN</td>
+            <td>@Html.DisplayFor(model => model.TenDN)</td>
+        </tr>
+        <tr style="font-size:15px">
+
+            <td style="width: 30%;text-align: center;">Mật Khẩu</td>
+            <td>@Html.DisplayFor(model => model.MatKhau)</td>
+        </tr>
+    </table>
+</div>
+@*<div style="text-transform: uppercase;
+    font-weight: bold;">
+    <a href="/Admin/Home/AD_ShowAllKH" style=" color:#007f85;font-size:15px">Trở về</a>
+</div>
+
+<h2 style="text-transform:uppercase;font-weight:bold;padding-bottom:20px;text-align:center"></h2>
+<div class="row" style="justify-content: center;">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="hinhanh" style="  text-align: center;  float:right;  margin-bottom: 20px;">
+            <div style="height:350px;width:270px;" class="zoomWrapper">
+                <div style="height:350px;width:270px;" class="zoomWrapper">
+                    <a href="#">
+                       
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+        <div class="fw w_100" itemprop="offers">
+            <div class="group-status" style="font-size: 14px; margin-bottom: 15px;"> 
+                <label style="text-transform:uppercase;font-weight:500;font-weight: bold;"> :</label>
+                <span class="first_status margin-bottom-10" >
+                    <span class="status_name availabel" style="text-transform:capitalize">
+                      
+                    </span>    
+                </span>
+            </div>
+            <div class="group-status" style="font-size: 14px; margin-bottom: 15px;">
+                <label style="text-transform:uppercase;font-weight:500;font-weight: bold;"> :</label>
+                <span class="first_status margin-bottom-10">
+                    <span class="status_name availabel" style="text-transform:capitalize">
+                      
+                    </span>
+                </span>
+            </div>
+            <div class="group-status" style="font-size: 14px; margin-bottom: 15px;">
+                <label style="text-transform:uppercase;font-weight:500;font-weight: bold;"> Email:</label>
+                <span class="first_status margin-bottom-10">
+                    <span class="status_name availabel" style="text-transform:capitalize">
+                      
+                    </span>
+                </span>
+            </div>
+            <div class="group-status" style="font-size: 14px; margin-bottom: 15px;">
+                <label style="text-transform:uppercase;font-weight:500;font-weight: bold;"> Điện Thoại:</label>
+                <span class="first_status margin-bottom-10">
+                    <span class="status_name availabel" style="text-transform:capitalize">
+                       
+                    </span>
+                </span>
+            </div>
+            <div class="group-status" style="font-size: 14px; margin-bottom: 15px;">
+                <label style="text-transform:uppercase;font-weight:500;font-weight: bold;"></label>
+                <span class="first_status margin-bottom-10">
+                    <span class="status_name availabel" style="text-transform:capitalize">
+                       
+                    </span>
+                </span>
+            </div>
+            <div class="group-status" style="font-size: 14px; margin-bottom: 15px;">
+                <label style="text-transform:uppercase;font-weight:500;font-weight: bold;">MK:</label>
+                <span class="first_status margin-bottom-10">
+                    <span class="status_name availabel" style="text-transform:capitalize">
+                        @Html.DisplayFor(model => model.MatKhau)
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>*@
+      
